@@ -1,0 +1,67 @@
+anno2	manu_orig	manu_adjust	anno_over_manu
+B cells	B cells	B cells	Immune cells
+B cells AICDA+ LRMP+	B cells	B cells	Immune cells
+Plasma cells	B cells	B cells	Immune cells
+ILCs	T cells	T cells	Immune cells
+NK cells KLRF1+ CD3G-	T cells	T cells	Immune cells
+NK-like cells ID3+ ENTPD1+	T cells	T cells	Immune cells
+IELs ID3+ ENTPD1+	T cells	T cells	Immune cells
+T cells OGT+	T cells	T cells	Immune cells
+T cells CD4+ FOSB+	T cells	T cells	Immune cells
+T cells CD4+ IL17A+	T cells	T cells	Immune cells
+T cells Naive CD4+	T cells	T cells	Immune cells
+T cells CD8+	T cells	T cells	Immune cells
+T cells CD8+ KLRG1+	T cells	T cells	Immune cells
+Tregs	T cells	T cells	Immune cells
+Mature DCs	Myeloid cells	Myeloid cells	Immune cells
+DC1	Myeloid cells	Myeloid cells	Immune cells
+DC2 CD1D-	Myeloid cells	Myeloid cells	Immune cells
+DC2 CD1D+	Myeloid cells	Myeloid cells	Immune cells
+Macrophages CCL3+ CCL4+	Myeloid cells	Myeloid cells	Immune cells
+Macrophages	Myeloid cells	Myeloid cells	Immune cells
+Macrophages CXCL9+ CXCL10+	Myeloid cells	Myeloid cells	Immune cells
+Macrophages Metallothionein	Myeloid cells	Myeloid cells	Immune cells
+Macrophages LYVE1+	Myeloid cells	Myeloid cells	Immune cells
+Macrophages PLA2G2D+	Myeloid cells	Myeloid cells	Immune cells
+Monocytes CHI3L1+ CYP27A1+	Myeloid cells	Myeloid cells	Immune cells
+Monocytes S100A8+ S100A9+	Myeloid cells	Myeloid cells	Immune cells
+Neutrophils S100A8+ S100A9+	Myeloid cells	Myeloid cells	Immune cells
+Mast cells	Myeloid cells	Myeloid cells	Immune cells
+Immune Cycling cells	Myeloid cells	Cycling cells	Cycling cells
+Activated fibroblasts CCL19+ ADAMADEC1+	Stromal cells	Stromal cells	Stromal cells
+Inflammatory fibroblasts IL11+ CHI3L1+	Stromal cells	Stromal cells	Stromal cells
+Fibroblasts SMOC2+ PTGIS+	Stromal cells	Stromal cells	Stromal cells
+Fibroblasts ADAMDEC1+	Stromal cells	Stromal cells	Stromal cells
+Fibroblasts KCNN3+ LY6H+	Stromal cells	Stromal cells	Stromal cells
+Fibroblasts NPY+ SLITRK6+	Stromal cells	Stromal cells	Stromal cells
+Fibroblasts SFRP2+ SLPI+	Stromal cells	Stromal cells	Stromal cells
+Myofibroblasts GREM1+ GREM2+	Stromal cells	Stromal cells	Stromal cells
+Myofibroblasts HHIP+ NPNT+	Stromal cells	Stromal cells	Stromal cells
+Endothelial cells LTC4S+ SEMA3G+	Stromal cells	Stromal cells	Stromal cells
+Endothelial cells CA4+ CD36+	Stromal cells	Stromal cells	Stromal cells
+Endothelial cells CD36+	Stromal cells	Stromal cells	Stromal cells
+Endothelial cells DARC+	Stromal cells	Stromal cells	Stromal cells
+Pericytes HIGD1B+ STEAP4+	Stromal cells	Stromal cells	Stromal cells
+Pericytes RERGL+ NTRK2+	Stromal cells	Stromal cells	Stromal cells
+Glial cells	Stromal cells	Stromal cells	Stromal cells
+Lymphatics	Stromal cells	Stromal cells	Stromal cells
+Stromal Cycling cells	Stromal cells	Cycling cells	Cycling cells
+Enterocytes BEST4+	Epithelial cells	Epithelial cells	Epithelial cells
+Enterocytes TMIGD1+ MEP1A+	Epithelial cells	Epithelial cells	Epithelial cells
+Enterocytes TMIGD1+ MEP1A+ GSTA1+	Epithelial cells	Epithelial cells	Epithelial cells
+Epithelial cells METTL12+ MAFB+	Epithelial cells	Epithelial cells	Epithelial cells
+Enterocytes CA1+ CA2+ CA4-	Epithelial cells	Epithelial cells	Epithelial cells
+Stem cells OLFM4+ GSTA1+	Epithelial cells	Epithelial cells	Epithelial cells
+Stem cells OLFM4+ LGR5+	Epithelial cells	Epithelial cells	Epithelial cells
+Stem cells OLFM4+ PCNA+	Epithelial cells	Epithelial cells	Epithelial cells
+Stem cells OLFM4+	Epithelial cells	Epithelial cells	Epithelial cells
+Goblet cells MUC2+ TFF1-	Epithelial cells	Epithelial cells	Epithelial cells
+Goblet cells MUC2+ TFF1+	Epithelial cells	Epithelial cells	Epithelial cells
+Goblet cells SPINK4+	Epithelial cells	Epithelial cells	Epithelial cells
+Enterochromaffin cells	Epithelial cells	Epithelial cells	Epithelial cells
+Enteroendocrine cells	Epithelial cells	Epithelial cells	Epithelial cells
+L cells	Epithelial cells	Epithelial cells	Epithelial cells
+Paneth cells	Epithelial cells	Epithelial cells	Epithelial cells
+Tuft cells	Epithelial cells	Epithelial cells	Epithelial cells
+Epithelial cells HBB+ HBA+	Epithelial cells	Epithelial cells	Epithelial cells
+Epithelial Cycling cells	Epithelial cells	Cycling cells	Cycling cells

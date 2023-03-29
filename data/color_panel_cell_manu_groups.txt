@@ -1,4 +1,4 @@
-anno2	manu_orig	manu_adjust	anno_over_manu
+anno2	manu_origx	manu_adjust	anno_over_manu
 B cells	B cells	B cells	Immune cells
 B cells AICDA+ LRMP+	B cells	B cells	Immune cells
 Plasma cells	B cells	B cells	Immune cells

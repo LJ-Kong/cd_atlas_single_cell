@@ -1,5 +1,5 @@
 ##################################################################################################
-## prepare meta data
+## prepare the meta data
 # gather & download all the meta files from SCP and merge to one
 
 co.str <- read.delim("CO_STR.scp.metadata.txt")

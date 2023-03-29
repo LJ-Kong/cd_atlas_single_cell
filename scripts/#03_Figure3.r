@@ -7,6 +7,7 @@ library(data.table)
 library(pheatmap)
 
 source("./data/map_colors_lvls.r")
+## to generate de.cmb.rds see #DE_analysis.r
 de.cmb <- readRDS("./data/de.cmb.rds")
 
 

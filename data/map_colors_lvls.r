@@ -1,7 +1,6 @@
 ## mapping detailed anno2 to higher levels of type
 cell_types_anno <- read.delim("/color_panel_cell_manu_groups.txt")
 
-
 ## mapping between main celltypes to detailed celltypes
 cell_colors_overall <- c("T cells"="#fa117a", "B cells"="#ff8f8f", "Myeloid cells"="#51c4cf",  "Stromal cells"="#5149b2", "Epithelial cells"="#ffeca1", "Cycling cells"="gray")
 

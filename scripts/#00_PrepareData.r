@@ -1,52 +1,4 @@
 ##################################################################################################
-## prepare the meta data
-# gather & download all the meta files from SCP and merge to one
-
-co.str <- read.delim("CO_STR.scp.metadata.txt")
-dim(co.str) # 39434    35
-
-co.epi <- read.delim("CO_EPI.scp.metadata.txt")
-dim(co.epi) # 97789    30
-
-co.imm <- read.delim("CO_IMM.scp.metadata.txt")
-dim(co.imm) # 152510     41
-
-ti.str <- read.delim("TI_STR.scp.metadata.txt")
-dim(ti.str) # 75696    37
-
-ti.epi <- read.delim("TI_EPI.scp.metadata.txt")
-dim(ti.epi) # 154137     36
-
-ti.imm <- read.delim("TI_IMM.scp.metadata.txt")
-dim(ti.imm) # 201073     41
-
-comm_lb <- intersect(intersect(intersect(colnames(co.str), colnames(co.epi)), 
-		intersect(colnames(co.imm), colnames(ti.str))), 
-		intersect(colnames(ti.epi), colnames(ti.imm)))
-
-keep_lb <- c("NAME", "PubIDSample", "anno_overall", "n_genes", "n_counts", "Chem", "Site", "Type", "PubID", "Layer", "anno2")
-
-fin_mat <- rbind(co.str[,keep_lb], co.epi[-1,keep_lb], co.imm[-1,keep_lb], ti.str[-1,keep_lb], ti.epi[-1,keep_lb], ti.imm[-1,keep_lb])
-dim(fin_mat) # 720634     11
-sum(duplicated(fin_mat$NAME)) # check if there duplicated names
-
-fin_mat <- fin_mat[-1,]
-rownames(fin_mat) <- fin_mat[,1]
-fin_mat <- fin_mat[,-1]
-dim(fin_mat) # 720633     10
-
-# adjust some cell type names
-fin_mat$anno2 <- as.character(fin_mat$anno2)
-fin_mat[fin_mat$Site!="CO"&fin_mat$anno_overall=="Immune cells"&fin_mat$anno2=="Cycling cells",]$anno2 <- "Immune Cycling cells"
-fin_mat[fin_mat$anno2=="Monocytes HBB+",]$anno_overall <- "Epithelial cells"
-fin_mat[fin_mat$anno2=="Monocytes HBB+",]$anno2 <- "Epithelial cells HBB+ HBA+"
-fin_mat[fin_mat$anno2=="Epithelial HBB+ HBA+",]$anno2 <- "Epithelial cells HBB+ HBA+"
-
-length(unique(fin_mat$anno2)) #66
-
-write.table(fin_mat, sep = "\t", "co_ti_cmb_metadata.txt")
-
-##################################################################################################
 # gather & download all the mtx files from SCP and merge to one
 
 library(Seurat)
@@ -80,16 +32,16 @@ saveRDS(str.seur, "./data/co.str.seur.rds")
 ################################
 # Colon immune counts
 
-imm.counts <- readMM('CO_imm.scp.raw.mtx')
-rownames(imm.counts) <- read.table('CO_imm.scp.features.tsv')[,2] # take the genenames
-colnames(imm.counts) <- readLines('CO_imm.scp.barcodes.tsv')
+imm.counts <- readMM('CO_IMM.scp.raw.mtx')
+rownames(imm.counts) <- read.table('CO_IMM.scp.features.tsv')[,2] # take the genenames
+colnames(imm.counts) <- readLines('CO_IMM.scp.barcodes.tsv')
 dim(imm.counts) #28663 152509
 imm.seur <- CreateSeuratObject(counts=imm.counts, min.cells=0, min.features=0, names.field=1, names.delim='\\.')
 
 # readin normalized
-imm.data <- readMM('CO_imm.scp.matrix.mtx')
-rownames(imm.data) <- read.table('CO_imm.scp.features.tsv')[,2] # take the genenames
-colnames(imm.data) <- readLines('CO_imm.scp.barcodes.tsv')
+imm.data <- readMM('CO_IMM.scp.matrix.mtx')
+rownames(imm.data) <- read.table('CO_IMM.scp.features.tsv')[,2] # take the genenames
+colnames(imm.data) <- readLines('CO_IMM.scp.barcodes.tsv')
 dim(imm.data) #28663 152509
 imm.data <- CreateSeuratObject(counts=imm.data, min.cells=0, min.features=0, names.field=1, names.delim='\\.')
 
@@ -104,16 +56,16 @@ saveRDS(imm.seur, "./data/co.imm.seur.rds")
 ################################
 # Colon epithelial counts
 
-epi.counts <- readMM('CO_epi.scp.raw.mtx')
-rownames(epi.counts) <- read.table('CO_epi.scp.features.tsv')[,2] # take the genenames
-colnames(epi.counts) <- readLines('CO_epi.scp.barcodes.tsv')
+epi.counts <- readMM('CO_EPI.scp.raw.mtx')
+rownames(epi.counts) <- read.table('CO_EPI.scp.features.tsv')[,2] # take the genenames
+colnames(epi.counts) <- readLines('CO_EPI.scp.barcodes.tsv')
 dim(epi.counts) #28663 97788
 epi.seur <- CreateSeuratObject(counts=epi.counts, min.cells=0, min.features=0, names.field=1, names.delim='\\.')
 
 # readin normalized
-epi.data <- readMM('CO_epi.scp.matrix.mtx')
-rownames(epi.data) <- read.table('CO_epi.scp.features.tsv')[,2] # take the genenames
-colnames(epi.data) <- readLines('CO_epi.scp.barcodes.tsv')
+epi.data <- readMM('CO_EPI.scp.matrix.mtx')
+rownames(epi.data) <- read.table('CO_EPI.scp.features.tsv')[,2] # take the genenames
+colnames(epi.data) <- readLines('CO_EPI.scp.barcodes.tsv')
 dim(epi.data) #28663 97788
 epi.data <- CreateSeuratObject(counts=epi.data, min.cells=0, min.features=0, names.field=1, names.delim='\\.')
 
@@ -170,16 +122,16 @@ saveRDS(str.seur, "./data/ti.str.seur.rds")
 ################################
 # TI immune counts
 
-imm.counts <- readMM('TI_imm.scp.raw.mtx')
-rownames(imm.counts) <- read.table('TI_imm.scp.features.tsv')[,2] # take the genenames
-colnames(imm.counts) <- readLines('TI_imm.scp.barcodes.tsv')
+imm.counts <- readMM('TI_IMM.scp.raw.mtx')
+rownames(imm.counts) <- read.table('TI_IMM.scp.features.tsv')[,2] # take the genenames
+colnames(imm.counts) <- readLines('TI_IMM.scp.barcodes.tsv')
 dim(imm.counts) #28923 201072
 imm.seur <- CreateSeuratObject(counts=imm.counts, min.cells=0, min.features=0, names.field=1, names.delim='\\.')
 
 # readin normalized
-imm.data <- readMM('TI_imm.scp.matrix.mtx')
-rownames(imm.data) <- read.table('TI_imm.scp.features.tsv')[,2] # take the genenames
-colnames(imm.data) <- readLines('TI_imm.scp.barcodes.tsv')
+imm.data <- readMM('TI_IMM.scp.matrix.mtx')
+rownames(imm.data) <- read.table('TI_IMM.scp.features.tsv')[,2] # take the genenames
+colnames(imm.data) <- readLines('TI_IMM.scp.barcodes.tsv')
 dim(imm.data) #28923 201072
 imm.data <- CreateSeuratObject(counts=imm.data, min.cells=0, min.features=0, names.field=1, names.delim='\\.')
 
@@ -194,16 +146,16 @@ saveRDS(imm.seur, "./data/ti.imm.seur.rds")
 ################################
 # TI epithelial counts
 
-epi.counts <- readMM('TI_epi.scp.raw.mtx')
-rownames(epi.counts) <- read.table('TI_epi.scp.features.tsv')[,2] # take the genenames
-colnames(epi.counts) <- readLines('TI_epi.scp.barcodes.tsv')
+epi.counts <- readMM('TI_EPI.scp.raw.mtx')
+rownames(epi.counts) <- read.table('TI_EPI.scp.features.tsv')[,2] # take the genenames
+colnames(epi.counts) <- readLines('TI_EPI.scp.barcodes.tsv')
 dim(epi.counts) #28923 154136
 epi.seur <- CreateSeuratObject(counts=epi.counts, min.cells=0, min.features=0, names.field=1, names.delim='\\.')
 
 # readin normalized
-epi.data <- readMM('TI_epi.scp.matrix.mtx')
-rownames(epi.data) <- read.table('TI_epi.scp.features.tsv')[,2] # take the genenames
-colnames(epi.data) <- readLines('TI_epi.scp.barcodes.tsv')
+epi.data <- readMM('TI_EPI.scp.matrix.mtx')
+rownames(epi.data) <- read.table('TI_EPI.scp.features.tsv')[,2] # take the genenames
+colnames(epi.data) <- readLines('TI_EPI.scp.barcodes.tsv')
 dim(epi.data) #28923 154136
 epi.data <- CreateSeuratObject(counts=epi.data, min.cells=0, min.features=0, names.field=1, names.delim='\\.')
 

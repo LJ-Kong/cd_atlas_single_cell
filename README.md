@@ -1,6 +1,6 @@
 ## Human CD atlas study between colon and terminal ileum
 
-This repository includes main code to analyse the single cell data from [*'The landscape of immune dysregulation in Crohn’s Disease revealed through single-cell transcriptomic profiling in the ileum and colon'*](https://www.sciencedirect.com/science/article/abs/pii/S1074761323000122), which includes 720,633 quality cells from 71 donors with varying inflammation status and from both terminal ileum (TI) and colon.
+This repository includes main code to analyse the single cell data from [*'The landscape of immune dysregulation in Crohn’s Disease revealed through single-cell transcriptomic profiling in the ileum and colon'*](https://doi.org/10.1016/j.immuni.2023.01.002), which includes 720,633 quality cells from 71 donors with varying inflammation status and from both terminal ileum (TI) and colon.
 
 ### To start:
 Download the expression data from the Single Cell Portal (SCP) at: https://singlecell.broadinstitute.org/single_cell/study/SCP1884

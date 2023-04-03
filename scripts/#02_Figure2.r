@@ -24,7 +24,7 @@ de.cmb <- readRDS("./data/de.cmb.rds")
 merged.pbmc <- readRDS(file="./data/co_ti_cmb.rds")
 
 ############################################################
-# Prepare figure data
+# Prepare data for Figure 2
 ############################################################
 
 # tier-1 CD/IBD genes

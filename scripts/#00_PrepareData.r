@@ -1,5 +1,5 @@
 ##################################################################################################
-# gather & download all the mtx files from SCP and merge to one
+# gather & download all the mtx files from SCP and merge to one combined seurat object
 
 library(Seurat)
 library(Matrix)

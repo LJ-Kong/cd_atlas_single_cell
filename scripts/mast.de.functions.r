@@ -112,9 +112,8 @@ run.celltype <- function(seur, runlabel, celltype, prefilter_only=F) {
 		n_genes = scale(seur@meta.data$n_genes),
 		Layer = factor(seur@meta.data$Layer, levels=c('N', 'E', 'L')),
 		Type = factor(seur@meta.data$Type, levels=c('Heal', 'NonI', 'Infl')),
-		Donor = factor(seur@meta.data$Donor),
-		Channel = factor(seur@meta.data$Channel),
-		Chem = droplevels(factor(seur@meta.data$Chem, levels=c('v1', 'v2', 'v3'))))
+		Donor = factor(seur@meta.data$PubID),
+		Channel = factor(seur@meta.data$PubIDSample))
 	cv <- covariates[seur@meta.data$anno2==celltype,,drop=F]
 	
 	if (any(table(cv$Type) < 10)) {

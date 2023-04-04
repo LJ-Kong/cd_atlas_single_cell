@@ -37,8 +37,8 @@ ti.imm <- subset(result, idents="TI_Immune cells")
 ###########-- Colon 
 
 co.str <- subset(result, idents="CO_Stromal cells")
-co.imm <- subset(result, idents="CO_Immune cells")
 co.epi <- subset(result, idents="CO_Epithelial cells")
+co.imm <- subset(result, idents="CO_Immune cells")
 
 ########################################################
 rm(result);gc()

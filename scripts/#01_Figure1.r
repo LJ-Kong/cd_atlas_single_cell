@@ -1,7 +1,8 @@
 ###########################################################
 # Raw data was preprocessed using CellRanger and Cumulus by 
-# default settings
-# To have a quick start please use #01_prepare_data.r first 
+# default settings. Fig. 1B-C were generated as part of
+# this, the data for which is part of the SCP data.
+# To have a quick start please use #00_Prepare_data.r first 
 ############################################################
 # Figure 1. D PCoAs
 ############################################################

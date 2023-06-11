@@ -72,7 +72,7 @@ print(p)
 dev.off()
 
 ############################################################
-# Figure 1. E Compositional barplots
+# Figure 1. E-F Compositional barplots
 ############################################################
 
 library(lmerTest)
@@ -147,7 +147,7 @@ p1c <- matrix_barplot(as.matrix(imm.tests$pct[,cond3]), tmp,
 		xlab="", ylab="", colors=set.colors, legend.show=F, sig_only=T, sig_cut=0.05) + ggtitle("Myeloid cells")
 
 p <- ggarrange(p1b, p1a, p1c, p2, p3, nrow=1, widths=c(1.5, 3, 14, 17, 9))
-pdf("Cell_composition_barplot_stat.TI_20x4_updatedxx.pdf", 20, 4)
+pdf("Cell_composition_barplot_stat.TI_20x4.pdf", 20, 4)
 print(p)
 dev.off()
 
@@ -204,6 +204,6 @@ p1c <- matrix_barplot(as.matrix(imm.tests$pct[,cond3]), tmp,
 
 library(ggpubr)
 p <- ggarrange(p1b, p1a, p1c, p2, p3, nrow=1, align="h", widths=c(2,6,3.5,8.5,12.5))
-pdf("Cell_composition_barplot_stat.CO_20x4_updatedxx.pdf", 20, 4.5)
+pdf("Cell_composition_barplot_stat.CO_20x4.pdf", 20, 4.5)
 print(p)
 dev.off()

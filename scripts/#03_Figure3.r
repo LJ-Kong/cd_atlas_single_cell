@@ -319,6 +319,11 @@ library(Seurat)
 
 ## Download pathways from: https://www.gsea-msigdb.org/gsea/msigdb/human/collections.jsp#C2
 pty <- "./data/c2.cp.kegg.v7.0.symbols.gmt"
+pathways.hallmark <- gmtPathways(pty) # files from mysigdb 
+pathways.hallmark %>% 
+   head() %>% 
+   lapply(head)
+
 source("./data/map_colors_lvls.r")
 
 ## DE results

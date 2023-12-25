@@ -197,6 +197,7 @@ dim(cd) # 29756 720633
 rm(co, ti); gc()
 
 # Load metadata
+# co_ti_cmb_matadata.txt can be downloaded at: https://github.com/LJ-Kong/cd_atlas_single_cell/tree/main/data
 meta <- read.table('./data/co_ti_cmb_metadata.txt', sep='\t', header=T, row.names=1, stringsAsFactors=F)
 dim(meta) #720633     10
 length(unique(meta$anno2)) #66

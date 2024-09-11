@@ -15,4 +15,4 @@ Specfically, download these files below:
 - TI_EPI.scp.raw.mtx, TI_EPI.scp.matrix.mtx, TI_EPI.scp.features.tsv, TI_EPI.scp.barcodes.tsv
 
 Also, extra meta files can be downloaded from: [data folder](https://github.com/LJ-Kong/cd_atlas_single_cell/tree/main/data).
-Once all these files were downloaded please use [/scripts/#00_Prepare_data.r](https://github.com/LJ-Kong/cd_atlas_single_cell/blob/main/scripts/%2300_PrepareData.r) to start the analysis.
+Once all these files were downloaded please use [/scripts/#00_Prepare_data.r](https://github.com/LJ-Kong/cd_atlas_single_cell/blob/main/scripts/%2300_PrepareData.r) to start the analysis. Please also note that all the analyses were done under R base v4.1.2 and Seurat v4.3.0.
